@@ -1,0 +1,55 @@
+body {}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.board {
+    background-color: $color1;
+    border: 1px solid $color2;
+}
+
+.outer {
+    width: calc(100vw - 20px);
+    height: calc(100vh - 20px);
+    padding: 8px;
+    overflow-y: hidden;
+    position: relative;
+
+    .inner {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    .content-wrap {
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.mandatory {
+    height: calc(100vh - 40px);
+    scroll-snap-type: y mandatory;
+    overflow: scroll;
+
+    &>* {
+        scroll-snap-align: start;
+    }
+}
+
+.globalBgVideo {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}

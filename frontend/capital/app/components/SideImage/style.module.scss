@@ -1,0 +1,23 @@
+.wrap {
+    &.left {
+        position: absolute;
+        height: calc(100vh - 40px);
+        top: 0;
+        left: 49px;
+    }
+
+    &.right {
+        position: absolute;
+        height: calc(100vh - 40px);
+        top: 0;
+        right: 49px;
+
+        img {
+            transform: rotate(180deg);
+        }
+    }
+
+    img {
+        max-height: 100%;
+    }
+}

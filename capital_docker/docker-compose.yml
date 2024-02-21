@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  frontend:
+    ports:
+      - 3000:3000
+    build: frontend
+    container_name: capital_nextjs
+    tty: true
+    volumes:
+      - ../frontend:/usr/src/app
