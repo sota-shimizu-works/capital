@@ -19,7 +19,7 @@ export default function Item() {
 
                             <div className={style.datail}>
                                 <h2>Custom Birkin Bag</h2>
-                                <p className={style.subTitle}>Hermes's birkin bag by CAPITAL designers.</p>
+                                <p className={style.subTitle}>Hermes birkin bag by CAPITAL designers.</p>
 
                                 <h3>PRODUCT DETAILS</h3>
                                 <p className={style.description}>
