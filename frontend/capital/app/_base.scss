@@ -1,16 +1,16 @@
-body {}
-
 .display {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
+    position: relative;
 }
 
 .board {
     background-color: $color1;
     border: 1px solid $color2;
+    position: relative;
 }
 
 .outer {

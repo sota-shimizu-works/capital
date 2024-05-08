@@ -1,0 +1,14 @@
+.wrap {
+    overflow-x: auto;
+    height: 100%;
+}
+
+.reccomendWrap {
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-top: 200px;
+
+    &>* {
+        margin-bottom: 200px;
+    }
+}

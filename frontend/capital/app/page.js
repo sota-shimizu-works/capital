@@ -2,6 +2,7 @@ import Image from "next/image";
 import style from "./page.module.scss";
 import ImageCard from "@/app/components/ImageCard";
 import Flame from "@/app/components/Flame";
+import EndCard from "@/app/components/EndCard";
 
 export default function Home() {
   return (
@@ -27,36 +28,42 @@ export default function Home() {
         <Flame>
           <div className="mandatory">
             <ImageCard
-              rightImageUrl="https://img.lovepik.com/background/20211030/medium/lovepik-cool-technology-blue-background-image_400378476.jpg"
-              leftImageUrl="https://pics.prcm.jp/1db5cb0b13286/85357914/jpeg/85357914_358x636.jpeg"
-              centerImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png"
+              rightImageUrl="/test/1-1.png"
+              leftImageUrl="/test/1-3.png"
+              centerImageUrl="/test/1-2.jpg"
               id="1"
               type="test"
+              title="KidNapClub Tee"
+              description="1st  signature model Tee is
+              available now. "
+              category="PRODUCT"
             />
 
             <ImageCard
-              rightImageUrl="https://img.lovepik.com/background/20211030/medium/lovepik-cool-technology-blue-background-image_400378476.jpg"
-              leftImageUrl="https://pics.prcm.jp/1db5cb0b13286/85357914/jpeg/85357914_358x636.jpeg"
-              centerImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png"
+              rightImageUrl="/test/2-1.png"
+              leftImageUrl="/test/2-3.png"
+              centerImageUrl="/test/2-2.jpg"
               id="1"
               type="test"
+              title="Custom Birkin Bag"
+              description="Customizing Hermes's birkin bag by 
+              CAPITAL designers."
+              category="PRODUCT"
             />
 
             <ImageCard
-              rightImageUrl="https://img.lovepik.com/background/20211030/medium/lovepik-cool-technology-blue-background-image_400378476.jpg"
-              leftImageUrl="https://pics.prcm.jp/1db5cb0b13286/85357914/jpeg/85357914_358x636.jpeg"
-              centerImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png"
+              rightImageUrl="/test/3-1.png"
+              leftImageUrl="/test/3-3.png"
+              centerImageUrl="/test/3-2.jpg"
               id="1"
               type="test"
+              title="MU 40th anniversary Mag"
+              description="CAPITAL x MU 40th anniversary mag
+              is now available."
+              category="PRODUCT"
             />
 
-            <ImageCard
-              rightImageUrl="https://img.lovepik.com/background/20211030/medium/lovepik-cool-technology-blue-background-image_400378476.jpg"
-              leftImageUrl="https://pics.prcm.jp/1db5cb0b13286/85357914/jpeg/85357914_358x636.jpeg"
-              centerImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png"
-              id="1"
-              type="test"
-            />
+            <EndCard />
           </div>
         </Flame>
       </div>
