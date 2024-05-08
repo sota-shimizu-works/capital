@@ -46,8 +46,8 @@ export default function Home() {
               id="1"
               type="test"
               title="Custom Birkin Bag"
-              description="Customizing Hermes's birkin bag by 
-              CAPITAL designers."
+              description={`Customizing Hermes's birkin bag by 
+              CAPITAL designers.`}
               category="PRODUCT"
             />
 
