@@ -1,9 +1,14 @@
+html {
+    height: -webkit-fill-available;
+}
+
 .display {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100svw;
-    height: 100svh;
+    width: 100vw;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     position: relative;
 }
 
@@ -14,8 +19,8 @@
 }
 
 .outer {
-    width: calc(100svw - 20px);
-    height: calc(100svh - 20px);
+    width: calc(100vw - 20px);
+    height: calc(100vh - 20px);
     padding: 8px;
     overflow-y: hidden;
     position: relative;
@@ -35,7 +40,7 @@
 }
 
 .mandatory {
-    height: calc(100svh - 40px);
+    height: calc(100vh - 40px);
     scroll-snap-type: y mandatory;
     overflow: scroll;
 
@@ -45,8 +50,10 @@
 }
 
 .globalBgVideo {
-    width: 100svw;
-    height: 100svh;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     object-fit: cover;
     position: fixed;
     top: 0;
