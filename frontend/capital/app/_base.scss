@@ -7,12 +7,7 @@ html {
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
-
-    @supports (-webkit-touch-callout: none) {
-        height: -webkit-fill-available;
-    }
-
+    height: 100dvh;
     position: relative;
 }
 
@@ -24,7 +19,7 @@ html {
 
 .outer {
     width: calc(100vw - 20px);
-    height: calc(100vh - 20px);
+    height: calc(100dvh - 20px);
     padding: 8px;
     overflow-y: hidden;
     position: relative;
@@ -44,7 +39,7 @@ html {
 }
 
 .mandatory {
-    height: calc(100vh - 40px);
+    height: calc(100dvh - 40px);
     scroll-snap-type: y mandatory;
     overflow: scroll;
 
@@ -55,7 +50,7 @@ html {
 
 .globalBgVideo {
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     object-fit: cover;
     position: fixed;
     top: 0;

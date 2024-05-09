@@ -3,11 +3,11 @@
 .home {
   scroll-snap-type: y mandatory;
   overflow: scroll;
-  height: 100vh;
+  height: 100dvh;
 
   &>* {
     scroll-snap-align: start;
-    height: 100vh;
+    height: 100dvh;
   }
 }
 
@@ -18,13 +18,13 @@
     pointer-events: none;
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
 
     .right,
     .left {
       width: 50%;
-      height: 100vh;
+      height: 100dvh;
       background-color: $color1;
       position: absolute;
       top: 0;
@@ -51,7 +51,7 @@
 
     .center {
       width: 1px;
-      height: 0vh;
+      height: 0dvh;
       background-color: $color4;
       position: absolute;
       top: 0;
@@ -62,7 +62,7 @@
 
   .logo {
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,11 +78,11 @@
 
 @keyframes centerLine {
   0% {
-    height: 0vh;
+    height: 0dvh;
   }
 
   100% {
-    height: 100vh;
+    height: 100dvh;
   }
 }
 
