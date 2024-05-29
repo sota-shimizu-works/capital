@@ -29,6 +29,7 @@ export default function ItemCard({ children, recommend_display, recommend_items 
                                                     title={recommend.name}
                                                     description={recommend.short_description}
                                                     link={`/item/${recommend.id}`}
+                                                    key={index}
                                                 />
                                             )
                                         })}
