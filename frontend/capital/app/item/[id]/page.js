@@ -1,6 +1,6 @@
 import Flame from "@/app/components/Flame";
 import ItemCard from "@/app/components/ItemCard";
-import style from "@/app/item/style.module.scss"
+import style from "@/app/item/[id]/style.module.scss"
 
 async function getItem(id) {
     const res = await fetch(`https://ltwiqi7z0s.microcms.io/api/v1/items/${id}`, {
