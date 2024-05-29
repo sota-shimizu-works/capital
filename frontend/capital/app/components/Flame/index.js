@@ -5,7 +5,7 @@ import Image from "next/image"
 import style from "@/app/components/Flame/style.module.scss"
 import Link from "next/link"
 
-export default function Flame({ children }) {
+export default function Flame({ children, searchParams }) {
     return (
         <>
             <div className="display">
@@ -37,7 +37,7 @@ export default function Flame({ children }) {
                     </div>
                 </div>
 
-                <GlobalNavigation />
+                <GlobalNavigation searchParams={searchParams} />
             </div>
         </>
     )

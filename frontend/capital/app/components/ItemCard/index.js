@@ -4,7 +4,9 @@ import Itemstyle from "@/app/components/ItemCard/style.module.scss"
 import ReccomendCard from "@/app/components/ReccomendCard"
 import EndCard from "@/app/components/EndCard"
 
-export default function ItemCard({ children }) {
+
+export default function ItemCard({ children, recommend_display, recommend_items }) {
+
     return (
         <>
             <div className={style.wrap}>
@@ -17,22 +19,21 @@ export default function ItemCard({ children }) {
                             {children}
 
                             <div className={Itemstyle.reccomendWrap}>
-                                <ReccomendCard
-                                    category="PRODUCT"
-                                    imageUrl="/test/1-2.jpg"
-                                    title="KidNapClub Tee"
-                                    description="1st  signature model Tee is
-                                    available now. "
-                                    link=""
-                                />
-                                <ReccomendCard
-                                    category="PRODUCT"
-                                    imageUrl="/test/1-2.jpg"
-                                    title="KidNapClub Tee"
-                                    description="1st  signature model Tee is
-                                    available now. "
-                                    link=""
-                                />
+                                {recommend_display && (
+                                    <>
+                                        {recommend_items.length > 0 && recommend_items.map((recommend, index) => {
+                                            return (
+                                                <ReccomendCard
+                                                    category={recommend.category.name}
+                                                    imageUrl={recommend.center_image.url}
+                                                    title={recommend.name}
+                                                    description={recommend.short_description}
+                                                    link={`/item/${recommend.id}`}
+                                                />
+                                            )
+                                        })}
+                                    </>
+                                )}
                             </div>
 
                             <EndCard noSide={true} />

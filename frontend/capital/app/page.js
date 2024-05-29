@@ -4,7 +4,52 @@ import ImageCard from "@/app/components/ImageCard";
 import Flame from "@/app/components/Flame";
 import EndCard from "@/app/components/EndCard";
 
-export default function Home() {
+export const metadata = {
+  title: 'CAPITAL',
+}
+
+async function getItems(searchParams) {
+  const category = searchParams.category ? searchParams.category : false
+
+  if (category == false) {
+    const res = await fetch('https://ltwiqi7z0s.microcms.io/api/v1/items', {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "X-MICROCMS-API-KEY": process.env.MICROCMS_API_KEY
+      },
+      cache: "no-store",
+    })
+
+    return res.json()
+  } else {
+    const categories = {
+      'shop': '4z8dhygzwlr',
+      'sound': '9l1a6jpxs',
+      'eat': 'vnj8c8b4pw',
+      'event': 'h-zvi_x8v'
+    }
+    const params = { filters: `category[equals]${categories[category]}` }
+    const query = new URLSearchParams(params)
+
+
+    const res = await fetch(`https://ltwiqi7z0s.microcms.io/api/v1/items?${query}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "X-MICROCMS-API-KEY": process.env.MICROCMS_API_KEY
+      },
+      cache: "no-store",
+    })
+
+    return res.json()
+
+  }
+}
+
+export default async function Home({ searchParams }) {
+  const items = await getItems(searchParams)
+
   return (
     <>
       <div className={style.home}>
@@ -25,44 +70,21 @@ export default function Home() {
           </div>
         </div>
 
-        <Flame>
+        <Flame searchParams={searchParams}>
           <div className="mandatory">
-            <ImageCard
-              rightImageUrl="/test/1-1.png"
-              leftImageUrl="/test/1-3.png"
-              centerImageUrl="/test/1-2.jpg"
-              id="1"
-              type="test"
-              title="KidNapClub Tee"
-              description="1st  signature model Tee is
-              available now. "
-              category="PRODUCT"
-            />
-
-            <ImageCard
-              rightImageUrl="/test/2-1.png"
-              leftImageUrl="/test/2-3.png"
-              centerImageUrl="/test/2-2.jpg"
-              id="1"
-              type="test"
-              title="Custom Birkin Bag"
-              description="Customizing Hermes birkin bag by 
-              CAPITAL designers."
-              category="PRODUCT"
-            />
-
-            <ImageCard
-              rightImageUrl="/test/3-1.png"
-              leftImageUrl="/test/3-3.png"
-              centerImageUrl="/test/3-2.jpg"
-              id="1"
-              type="test"
-              title="MU 40th anniversary Mag"
-              description="CAPITAL x MU 40th anniversary mag
-              is now available."
-              category="PRODUCT"
-            />
-
+            {items.contents.length > 0 && items.contents.map((item, index) => {
+              return <ImageCard
+                rightImageUrl={item.right_image.url}
+                leftImageUrl={item.left_image.url}
+                centerImageUrl={item.center_image.url}
+                id={item.id}
+                type={item.category.slug}
+                title={item.name}
+                description={item.short_description}
+                category={item.category.name}
+                key={item.id}
+              />
+            })}
             <EndCard />
           </div>
         </Flame>

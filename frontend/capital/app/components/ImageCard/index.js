@@ -3,8 +3,6 @@ import style from "./style.module.scss"
 
 export default function ImageCard({ rightImageUrl, leftImageUrl, centerImageUrl, id, type, title, description, category }) {
 
-    const link = `/${type}/${id}`
-
     return (
         <>
             <div className={style.wrap}>
@@ -23,7 +21,7 @@ export default function ImageCard({ rightImageUrl, leftImageUrl, centerImageUrl,
                             <h2>{title}</h2>
                             <p>{description}</p>
                         </div>
-                        <Link href="/item" className={style.link}>
+                        <Link href={`/item/${id}`} className={style.link}>
                             <span>MORE</span>
                         </Link>
                     </div>
