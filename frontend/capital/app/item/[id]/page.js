@@ -15,13 +15,13 @@ async function getItem(id) {
     return res.json()
 }
 
-export default async function Item({ params }) {
+export default async function Item({ searchParams, params }) {
 
     const item = await getItem(params.id)
 
     return (
         <>
-            <Flame>
+            <Flame searchParams={searchParams}>
                 <div className="mandatory">
 
                     <ItemCard recommend_display={item.recommend_display} recommend_items={item.recommend_items} category={item.category} >
